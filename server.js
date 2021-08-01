@@ -1,0 +1,25 @@
+const express = require("express");
+const morgan = require("morgan");
+const path = require("path");
+
+const port = process.env.PORT || 3001;
+
+const app = express();
+
+app.use(morgan("dev"));
+
+app.set("view engine", "ejs"); // template engine
+app.set("views", path.join(__dirname, "views")); // setting views directory
+app.use(express.static(path.join(__dirname, "public"))); // static files directory
+
+const indexRouter = require("./routes/index.routes");
+const studentsRouter = require("./routes/students.routes");
+const authRouter = require("./routes/auth.routes");
+
+app.use("/", indexRouter);
+app.use("/students", studentsRouter);
+app.use("/auth", authRouter);
+
+app.listen(port, () => {
+  console.log(`Server running on ${port}`);
+});
