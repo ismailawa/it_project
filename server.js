@@ -6,6 +6,9 @@ const port = process.env.PORT || 3001;
 
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.use(morgan("dev"));
 
 app.set("view engine", "ejs"); // template engine

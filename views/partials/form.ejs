@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card mt-3 mb-3 shadow rounded p-3">
+            <div class="card-body">
+                <h1 class="mb-3 mt-3 text-secondary"><%= title %></h1>
+                <form method="post" action="<%= type=='register'? '/auth/register': '/auth/login' %>">
+                    <% if(type==="register") {%>
+                    <div class="mb-3 mt-3">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" name="firstName" class="form-control" id="firstName"
+                            aria-describedby="firstName" required>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" name="lastName" class="form-control" id="lastName"
+                            aria-describedby="emailHelp" required>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="phoneNumber" class="form-label">Phone Number</label>
+                        <input type="number" name="phoneNumber" class="form-control" id="phoneNumber"
+                            aria-describedby="emailHelp" required>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" required>
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <% } else {%>
+                    <div class="mb-3 mt-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" required>
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <% } %>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
