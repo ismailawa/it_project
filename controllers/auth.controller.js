@@ -8,14 +8,12 @@ module.exports = {
   },
 
   createController: (req, res) => {
-    const body = req.body;
-    console.log(body);
+    console.log("register");
     res.redirect("/auth/login");
   },
 
   verifyregisterController: (req, res) => {
-    const body = req.body;
-    console.log(body);
+    console.log("login");
     res.redirect("/");
   },
 };
