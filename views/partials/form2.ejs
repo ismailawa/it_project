@@ -2,29 +2,29 @@
     <form method="post" action="<%= type=== 'Register'? '/auth/register': '/auth/login' %>" class="m-4">
         <% if(type === 'Register'){%>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="firstName" class="form-label">First Name</label>
+            <input name="firstName" type="text" class="form-control" id="firstName" aria-describedby="firstName">
 
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input name="lastName" type="text" class="form-control" id="lastName" aria-describedby="lastName">
 
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Phone Number</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input name="phone" type="number" class="form-control" id="phone" aria-describedby="phone">
 
         </div>
         <%} %>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="password" class="form-label">Password</label>
+            <input name="password" type="password" class="form-control" id="password">
         </div>
         <button type="submit" class="btn btn-primary"><%= type %></button>
     </form>

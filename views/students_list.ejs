@@ -1,5 +1,32 @@
 <%- include('partials/header') %>
-<div class="container">
-    <h1>Students Table</h1>
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <h1 class="text-secondary">Students Table</h1>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Email Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% students.forEach((student)=>{%>
+                    <tr>
+                        <td><%= student.id %></td>
+                        <td><%= student.firstName %></td>
+                        <td><%= student.lastName %></td>
+                        <td><%= student.phone %></td>
+                        <td><%= student.email %></td>
+                    </tr>
+                    <%})%>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 <%- include('partials/footer') %>

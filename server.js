@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
+const { sequelize } = require("./models");
 
 const port = process.env.PORT || 3005;
 
@@ -24,5 +25,7 @@ app.use("/students", studentsRouter);
 app.use("/auth", authRouter);
 
 app.listen(port, () => {
-  console.log(`Server running on ${port}`);
+  sequelize.sync().then(() => {
+    console.log(`Server running on ${port}`);
+  });
 });
