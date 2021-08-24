@@ -10,16 +10,17 @@ module.exports = {
   },
 
   createController: async (req, res) => {
-    const { firstName, lastName, phone, email, password } = req.body;
+    const { firstName, lastName, phone, email, age, address } = req.body;
     const student = await Student.create({
       firstName,
       lastName,
       phone,
       email,
-      password,
+      age,
+      address,
     });
     // console.log(req.body);
-    res.redirect("/auth/login");
+    res.redirect("/students");
   },
 
   verifyregisterController: (req, res) => {

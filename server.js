@@ -19,13 +19,15 @@ app.use(express.static(path.join(__dirname, "public"))); // static files directo
 const indexRouter = require("./routes/index.routes");
 const studentsRouter = require("./routes/students.routes");
 const authRouter = require("./routes/auth.routes");
+const postRouter = require("./routes/post.routes");
 
 app.use("/", indexRouter);
 app.use("/students", studentsRouter);
 app.use("/auth", authRouter);
+app.use("/posts", postRouter);
 
 app.listen(port, () => {
-  sequelize.sync().then(() => {
+  sequelize.authenticate().then(() => {
     console.log(`Server running on ${port}`);
   });
 });
